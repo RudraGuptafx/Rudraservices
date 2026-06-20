@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Get a Quote — Rudra Gupta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #0a0a0d;
+    --card: #14151a;
+    --line: #2a262e;
+    --red: #ff1f3d;
+    --ember: #ff7a3d;
+    --paper: #f2efe8;
+    --dim: #8d8a92;
+    --grad: linear-gradient(100deg, var(--red), var(--ember));
+  }
+
+  *{ box-sizing: border-box; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    background: var(--ink);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 36px 16px;
+    font-family:'Space Grotesk', sans-serif;
+    color: var(--paper);
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  .glow{
+    position:fixed;
+    top: -120px;
+    right: -120px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,31,61,0.35), rgba(255,31,61,0) 70%);
+    filter: blur(10px);
+    animation: pulse 6s ease-in-out infinite;
+    pointer-events:none;
+  }
+
+  @keyframes pulse{
+    0%, 100%{ opacity: 0.7; transform: scale(1); }
+    50%{ opacity: 1; transform: scale(1.08); }
+  }
+
+  .card{
+    width:100%;
+    max-width: 420px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 34px 26px 28px;
+    position:relative;
+    z-index: 1;
+  }
+
+  .card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:3px;
+    border-radius: 16px 16px 0 0;
+    background: var(--grad);
+  }
+
+  .eyebrow{
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+
+  h1{
+    font-family:'Anton', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 34px;
+    line-height: 1.08;
+    letter-spacing: 0.01em;
+    margin: 0 0 10px;
+  }
+
+  .byline{
+    font-size: 13px;
+    color: var(--dim);
+    margin: 0 0 18px;
+  }
+  .byline strong{ color: var(--paper); font-weight: 600; }
+
+  .proof{
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+    color: var(--dim);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 0;
+    margin: 0 0 24px;
+    line-height: 1.6;
+  }
+
+  label{
+    display:block;
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--dim);
+    margin: 0 0 6px;
+  }
+
+  .field{ margin-bottom: 15px; }
+
+  input, select, textarea{
+    width:100%;
+    background: #0d0e12;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    padding: 12px 13px;
+    font-family:'Space Grotesk', sans-serif;
+    font-size: 14.5px;
+    color: var(--paper);
+    outline:none;
+    transition: border-color .15s ease;
+  }
+
+  input::placeholder, textarea::placeholder{ color: #56535c; }
+
+  input:focus, select:focus, textarea:focus{
+    border-color: var(--red);
+  }
+
+  textarea{ resize: vertical; min-height: 64px; }
+  select{ appearance:none; cursor:pointer; }
+
+  .req::after{ content:" *"; color: var(--red); }
+
+  .capacity{
+    font-size: 11.5px;
+    color: var(--ember);
+    text-align:center;
+    margin: 4px 0 14px;
+  }
+
+  button{
+    width:100%;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 10px;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 14.5px;
+    letter-spacing: 0.01em;
+    color: #0a0a0d;
+    cursor: pointer;
+    background: var(--grad);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    transition: background-position .5s ease, transform .15s ease;
+  }
+
+  button:hover{ background-position: 100% 0%; }
+  button:active{ transform: scale(0.98); }
+  button:disabled{ opacity: 0.7; cursor: default; }
+
+  .error{
+    font-size: 12px;
+    color: var(--red);
+    margin: -8px 0 12px;
+    min-height: 14px;
+  }
+
+  .footnote{
+    margin-top: 16px;
+    font-size: 11.5px;
+    color: var(--dim);
+    text-align:center;
+    line-height:1.5;
+  }
+</style>
+</head>
+<body>
+
+  <div class="glow"></div>
+
+  <div class="card">
+    <p class="eyebrow">Get a Quote</p>
+    <h1>Ads That<br/>Actually Convert.</h1>
+    <p class="byline"><strong>Rudra Gupta</strong> — AI Specialized Editor</p>
+    <p class="proof">50+ Projects &nbsp;·&nbsp; UGC / Hybrid / AI Avatar Ads &nbsp;·&nbsp; 12–24Hr Turnaround</p>
+
+    <form id="inquiryForm">
+      <div class="field">
+        <label class="req" for="name">Your name</label>
+        <input id="name" type="text" placeholder="e.g. Aarav Mehta" required />
+      </div>
+
+      <div class="field">
+        <label for="brand">Brand / Company</label>
+        <input id="brand" type="text" placeholder="If you're inquiring for a business" />
+      </div>
+
+      <div class="field">
+        <label class="req" for="service">Service you need</label>
+        <select id="service" required>
+          <option value="" disabled selected>Choose one</option>
+          <option>UGC Ads</option>
+          <option>Hybrid Ads</option>
+          <option>AI Avatar Services</option>
+          <option>Video Editing / Ad Creative</option>
+          <option>Monthly Content Retainer</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="req" for="contact">Phone or email</label>
+        <input id="contact" type="text" placeholder="Where I can reach you back" required />
+      </div>
+
+      <div class="field">
+        <label for="note">Anything else?</label>
+        <textarea id="note" placeholder="Budget, timeline, reference links — whatever's useful"></textarea>
+      </div>
+
+      <p class="error" id="errorMsg"></p>
+
+      <button type="submit" id="sendBtn">Get My Quote on WhatsApp</button>
+      <p class="capacity">Currently booking 3 client slots this month</p>
+    </form>
+
+    <p class="footnote">Opens WhatsApp directly with your details — no account needed.</p>
+  </div>
+
+<script>
+  const WHATSAPP_NUMBER = "917980332918";
+
+  const form = document.getElementById('inquiryForm');
+  const btn = document.getElementById('sendBtn');
+  const errorMsg = document.getElementById('errorMsg');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const brand = document.getElementById('brand').value.trim();
+    const service = document.getElementById('service').value;
+    const contact = document.getElementById('contact').value.trim();
+    const note = document.getElementById('note').value.trim();
+
+    if(!name || !service || !contact){
+      errorMsg.textContent = "Please fill in your name, service, and contact info.";
+      return;
+    }
+    errorMsg.textContent = "";
+
+    const lines = [
+      "New ad inquiry from portfolio site",
+      "",
+      "Name: " + name
+    ];
+    if(brand){ lines.push("Brand/Company: " + brand); }
+    lines.push("Service: " + service);
+    lines.push("Contact: " + contact);
+    if(note){ lines.push("Note: " + note); }
+
+    const message = encodeURIComponent(lines.join("\n"));
+    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + message;
+
+    btn.textContent = "Opening WhatsApp…";
+    btn.disabled = true;
+
+    window.open(url, "_blank");
+
+    setTimeout(function(){
+      btn.textContent = "Sent — check WhatsApp";
+      setTimeout(function(){
+        btn.textContent = "Get My Quote on WhatsApp";
+        btn.disabled = false;
+      }, 2500);
+    }, 400);
+  });
+</script>
+
+</body>
+</html>
